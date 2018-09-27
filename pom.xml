@@ -18,6 +18,13 @@
 
   <description>Agilhard Util - Pty Unix C library</description>
 
+  <licenses>
+    <license>
+      <name>LGPL</name>
+      <url>http://www.gnu.org/licenses/lgpl.html</url>
+    </license>
+  </licenses>
+
   <properties>
     <rootBasedir>${project.parent.parent.basedir}</rootBasedir>
   </properties>
