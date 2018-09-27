@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =============================================================== -->
+<!-- -->
+<!-- Maven2 Project Object Model -->
+<!-- -->
+<!-- =============================================================== -->
+<!-- | For more configuration information see the Maven website -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>net.agilhard.align</groupId>
+    <artifactId>agilhard-align-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>agilhard-lib-pty</artifactId>
+  <groupId>net.agilhard.util</groupId>
+  <name>Agilhard Util - Pty Unix C library</name>
+
+  <description>Agilhard Util - Pty Unix C library</description>
+
+  <properties>
+    <rootBasedir>${project.parent.parent.basedir}</rootBasedir>
+  </properties>
+
+  <packaging>so</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>native-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <compilerStartOptions>
+            <compilerStartOption>-fPIC</compilerStartOption>
+          </compilerStartOptions>
+          <sources>
+            <source>
+              <directory>src/main/c</directory>
+              <fileNames>
+                <fileName>startpty.c</fileName>
+              </fileNames>
+            </source>
+          </sources>
+          <linkerStartOptions>
+            <linkerStartOption>-shared -lutil</linkerStartOption>
+          </linkerStartOptions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <!-- Environment Information -->
+  <scm>
+    <developerConnection>scm:git:${scm.base.url}/agilhard-lib-pty</developerConnection>
+  </scm>
+</project>
