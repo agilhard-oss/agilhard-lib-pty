@@ -15,7 +15,6 @@
   <artifactId>agilhard-lib-pty</artifactId>
   <groupId>net.agilhard.util</groupId>
   <name>Agilhard Util - Pty Unix C library</name>
-
   <description>Agilhard Util - Pty Unix C library</description>
 
   <licenses>
